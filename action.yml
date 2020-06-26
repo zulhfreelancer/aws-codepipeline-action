@@ -1,4 +1,4 @@
-name: "AWS CodePipeline"
+name: "AWS CodePipeline Trigger"
 description: "Trigger a pipeline in AWS CodePipeline from GitHub Actions"
 inputs:
   aws-region:
