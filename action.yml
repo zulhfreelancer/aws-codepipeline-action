@@ -1,5 +1,5 @@
-name: "Hello World"
-description: "Greet someone and record the time"
+name: "AWS CodePipeline"
+description: "Trigger a pipeline in AWS CodePipeline from GitHub Actions"
 inputs:
   aws-region:
     description: "AWS Region where the CodePipeline is located"
