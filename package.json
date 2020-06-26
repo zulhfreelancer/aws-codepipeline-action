@@ -1,12 +1,22 @@
 {
     "name": "aws-codepipeline-action",
     "version": "1.0.6",
-    "description": "",
+    "description": "This GitHub Actions will help you trigger a pipeline in your AWS CodePipeline - assumming you already have the pipeline. This will not create the pipeline for you.",
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\""
     },
-    "keywords": [],
+    "keywords": [
+        "aws",
+        "github",
+        "actions",
+        "codepipeline",
+        "trigger"
+    ],
+    "repository": {
+        "url": "https://github.com/zulhfreelancer/aws-codepipeline-action",
+        "type": "git"
+    },
     "author": "",
     "license": "ISC",
     "dependencies": {
