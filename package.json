@@ -20,7 +20,7 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
-        "@actions/core": "^1.2.4",
+        "@actions/core": "^1.10.1",
         "@actions/github": "^3.0.0",
         "aws-sdk": "^2.705.0"
     }
