@@ -83,6 +83,26 @@ jobs:
           pipeline-name: "your-pipeline-name"
 ```
 
+## Optional - Fail the workflow if CodePipeline call returns an error
+By default, only a log message is displayed if Codepipeline call returns an error, but the workflow is not marked as failed.
+
+By setting the input `fail-on-error` to `true` (`True` or `TRUE` are also accepted), the Github workflow will be marked as failed, and will interrupt the workflow run.
+
+
+```
+jobs:
+  deploy:
+    steps:
+      - name: Trigger AWS CodePipeline
+        uses: zulhfreelancer/aws-codepipeline-action@vX.X.X
+        with:
+          aws-region: "ap-southeast-1"
+          aws-access-key: ${{ secrets.AWS_PIPELINE_ACCESS_KEY }}
+          aws-secret-key: ${{ secrets.AWS_PIPELINE_SECRET_KEY }}
+          pipeline-name: "your-pipeline-name"
+          fail-on-error: "true"
+```
+
 ## Contribute
 
 Feel free to fork and submit PRs for this project. I'm more than happy to review and merge it. If you have any questions regarding contributing, feel free to reach out to me on [Twitter](https://twitter.com/zulhhandyplast).

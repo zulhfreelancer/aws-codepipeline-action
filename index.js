@@ -6,6 +6,7 @@ try {
   var awsAccessKey = core.getInput("aws-access-key");
   var awssecretKey = core.getInput("aws-secret-key");
   var pipelineName = core.getInput("pipeline-name");
+  var failOnError = core.getBooleanInput("fail-on-error");
 
   AWS.config = new AWS.Config();
   AWS.config.region = awsRegion;
@@ -19,11 +20,15 @@ try {
 
   codepipeline.startPipelineExecution(pipeline, function (err, okData) {
     if (err) {
-      console.log(err, err.stack);
+      core.error(err, err.stack);
+      if (failOnError) {
+        core.setFailed(`Action failed with error ${err}`);
+      }
     } else {
-      console.log(okData);
+      core.info(okData);
     }
   });
 } catch (error) {
+  core.error(error.message)
   core.setFailed(error.message);
 }
