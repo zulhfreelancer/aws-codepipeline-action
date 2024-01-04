@@ -20,6 +20,7 @@ try {
   codepipeline.startPipelineExecution(pipeline, function (err, okData) {
     if (err) {
       console.log(err, err.stack);
+      core.setFailed(err.message);
     } else {
       console.log(okData);
     }
